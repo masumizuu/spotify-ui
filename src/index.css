@@ -1,0 +1,92 @@
+@import "@fontsource/inter"; /* Include all weights or specific weights */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+    max-width: unset !important;
+    margin: unset !important;
+    padding: 0 !important;
+    text-align: unset !important;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.range {
+    --range-shdw: #fff;
+}
+
+input[type="range"] {
+    width: 100%;
+    appearance: auto; /* Removes default styles for better control */
+    background: transparent; /* Ensure no extra background is applied */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    background: #ffffff; /* White track color */
+    border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: auto;
+    width: 12px;
+    height: 12px;
+    background: transparent; /* Thumb color */
+    border-radius: 50%;
+    margin-top: -4px; /* Adjust thumb alignment */
+}
+
+input[type="range"]::-moz-range-track { /* Firefox */
+    width: 100%;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-radius: 50%;
+    border: none; /* Firefox thumb often has a border by default */
+}
+
+input[type="range"]::-ms-track { /* Edge */
+    width: 100%;
+    height: 4px;
+    background: transparent; /* Remove background for consistency */
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-radius: 50%;
+}
+
+input[type="range"] {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@keyframes marquee {
+    0%, 25% {
+        transform: translateX(0); /* Pause at the start */
+    }
+    50% {
+        transform: translateX(calc(-1 * var(--overflow-width, 100%))); /* Move to the left */
+    }
+    100% {
+        transform: translateX(0); /* Return to start */
+    }
+}
+
+
