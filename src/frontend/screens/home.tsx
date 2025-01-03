@@ -364,6 +364,20 @@ const Home: React.FC = () => {
     }, [spanRef, currentSong, songs]);
 
 // AUTO PLAY //
+    const repeatCurrentSong = async () => {
+        if (!audioRef.current) return;
+
+        try {
+            // Reset the current playback time
+            audioRef.current.currentTime = 0;
+
+            // Play the audio and await the promise
+            await audioRef.current.play();
+            console.log("Playback started successfully.");
+        } catch (error) {
+            console.error("Playback failed:", error);
+        }
+    };
     const autoPlay = () => {
         if (currentSong && currentPlaylist?.songs?.length) {
             const currentIndex = currentPlaylist.songs.findIndex(
@@ -376,11 +390,7 @@ const Home: React.FC = () => {
                 setCurrentSong(currentPlaylist.songs[randomIndex]);
             } else if (isRepeat) {
                 // Repeat: Restart the current song
-                audioRef.current!.currentTime = 0;
-                audioRef.current
-                    ?.play()
-                    .then(() => console.log("Song restarted."))
-                    .catch((error) => console.error("Playback failed:", error));
+                repeatCurrentSong();
             } else if (isLoop) {
                 // Loop on: Play the next song, or loop back to the first
                 const nextIndex = (currentIndex + 1) % currentPlaylist.songs.length;
@@ -411,7 +421,6 @@ const Home: React.FC = () => {
             audio?.removeEventListener("ended", handleSongEnd);
         };
     }, [autoPlay, currentSong, currentPlaylist]);
-
 
     return (
         <div className="flex h-screen bg-black text-white">
