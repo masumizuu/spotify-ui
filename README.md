@@ -2,6 +2,10 @@
 
 This project is a **Spotify-inspired UI** created with modern tools and technologies, including **React (TypeScript)**, **TailwindCSS**, and **DaisyUI**. It features an elegant design and functionality to mimic Spotify's user interface.
 
+| Home Preview                                    | Playlist and Playing Preview                     |
+|------------------------------------------------|------------------------------------------------|
+| <img src="./screenshots/showHome.png" alt="Home Preview" width="500" /> | <img src="./screenshots/showPlaylist&&isPlaying.png" alt="Playlist and Playing Preview" width="500" /> |
+
 ---
 
 ## Features ✨
