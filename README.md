@@ -43,7 +43,7 @@ This project is a **Spotify-inspired UI** created with modern tools and technolo
 4. **Run the application**: Start the development server (e.g. if you're using JetBrains Webstorm)
    ```bash
    npm run dev
-  Open your browser and visit [http://localhost:{port}] to view the project.
+  Open your browser and visit **http://localhost:{port}** to view the project.
 
 ---
 
